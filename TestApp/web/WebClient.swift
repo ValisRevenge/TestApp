@@ -16,13 +16,13 @@ final class WebClient {
         baseUrl = url
     }
     
-    func load(path: String, httpMethod:HTTPMethod, params:[String:Any], completion: @escaping(Any?, ServiceError?)->()) {
+    func load(path: String, httpMethod:HTTPMethod, params:[String:Any], completion: @escaping(Any?, ServiceError?)-> Void) {
         let url = URL(string: baseUrl + path)!
         request(url, method: httpMethod, parameters: params, encoding: URLEncoding.default, headers: nil).validate().responseData(completionHandler: {
             response in
             switch response.result {
             case .success:
-                
+                completion(response.data, nil)
                 break
             default:
                 break
