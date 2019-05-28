@@ -18,13 +18,16 @@ final class WebClient {
     
     func load(path: String, httpMethod:HTTPMethod, params:[String:Any], completion: @escaping(Any?, ServiceError?)-> Void) {
         let url = URL(string: baseUrl + path)!
-        request(url, method: httpMethod, parameters: params, encoding: URLEncoding.default, headers: nil).validate().responseData(completionHandler: {
+        
+        request(url, method: httpMethod, parameters: nil, encoding: URLEncoding.default, headers: nil).validate().responseJSON(completionHandler: {
             response in
             switch response.result {
             case .success:
-                completion(response.data, nil)
+                let dictionary = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments)
+                completion(dictionary, nil)
                 break
             default:
+                completion(nil, ServiceError.custom(response.result.debugDescription))
                 break
             }
             

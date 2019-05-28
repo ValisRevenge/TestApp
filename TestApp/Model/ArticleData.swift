@@ -7,13 +7,15 @@
 
 import Foundation
 
+typealias JSON = [String:Any]
+
 enum ArticleFilter: String {
     case Shared = "SHARED"
-    case MostViewd = "VIEWED"
+    case MostViewed = "VIEWED"
     case Emailed = "EMAILED"
 }
 
-struct ArticleData: Decodable {
+struct ArticleData {
     //main fields
     var keywords: String
     var section:String
@@ -34,21 +36,52 @@ struct ArticleData: Decodable {
     var geo_facet: [String]?
     var media: [String]?
     var articleUrl: String
-    var filtered: ArticleFilter
+    var filtered: ArticleFilter = .MostViewed
 
     //shared fields
     var shareCount: Int
-    var countType: String
-    
-    //emailed fields
-    var emailedCount: String
-    
-    private enum keys: String, CodingKey {
-        case num_results
-        case results
+    {
+        didSet {
+            filtered = .Shared
+        }
     }
     
-    init(from decoder:Decoder) throws {
+    //emailed fields
+    var emailedCount: Int
+    {
+        didSet {
+            filtered = .Emailed
+        }
+    }
+    //viewed fields
+    var viewsCount: Int
+    {
+        didSet {
+            filtered = .MostViewed
+        }
+    }
+//    private enum keys: String, CodingKey {
+//        case num_results
+//        case results
+//    }
+    
+    init(dictionary: JSON) {
+        keywords = dictionary["adx_keywords"] as? String ?? ""
+        section = dictionary["section"] as? String ?? ""
+        subsection = dictionary["subsection"] as? String ?? ""
+        byline = dictionary["byline"] as? String ?? ""
+        type = dictionary["type"] as? String ?? ""
+        title = dictionary["title"] as? String ?? ""
+        abstract = dictionary["abstract"] as? String ?? ""
+        let date = dictionary["published_date"] as? String ?? ""
+        publishedDate = DateFormatter().date(from: date) ?? Date()
+        source = dictionary["source"] as? String ?? ""
+        id = dictionary["id"] as? Int ?? -1
+        assetId = dictionary["asset_id"] as? Int ?? -1
+        articleUrl = dictionary["url"] as? String ?? ""
         
+        shareCount = dictionary["share_count"] as? Int ?? 0
+        emailedCount = dictionary["emailed_count"] as? Int ?? 0
+        viewsCount = dictionary["views"] as? Int ?? 0
     }
 }

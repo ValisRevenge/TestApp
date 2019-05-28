@@ -16,6 +16,8 @@
 		52101FF92299520200A3948A /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52101FF82299520200A3948A /* WebClient.swift */; };
 		52101FFB229952DC00A3948A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52101FFA229952DC00A3948A /* Error.swift */; };
 		52101FFE22999F9600A3948A /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52101FFD22999F9600A3948A /* ArticleData.swift */; };
+		5210BD20229D995D0074AA6C /* ArticlesStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5210BD1E229D995D0074AA6C /* ArticlesStorage.xcdatamodeld */; };
+		5210BD22229DA0160074AA6C /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5210BD21229DA0160074AA6C /* ArticleService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		52101FF82299520200A3948A /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
 		52101FFA229952DC00A3948A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		52101FFD22999F9600A3948A /* ArticleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
+		5210BD1F229D995D0074AA6C /* WeatherStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherStorage.xcdatamodel; sourceTree = "<group>"; };
+		5210BD21229DA0160074AA6C /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		90B9F5ECC00BD3C78C5E3E8D /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		C94944807FFF7B5B0086C5BC /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,6 +84,7 @@
 				520DD35E2298631000AFC45A /* ViewController.swift */,
 				520DD3602298631000AFC45A /* Main.storyboard */,
 				520DD3632298631100AFC45A /* Assets.xcassets */,
+				5210BD1E229D995D0074AA6C /* ArticlesStorage.xcdatamodeld */,
 				52101FFC22999F7100A3948A /* Model */,
 				52101FF7229951BF00A3948A /* web */,
 				520DD3652298631100AFC45A /* LaunchScreen.storyboard */,
@@ -93,6 +98,7 @@
 			children = (
 				52101FF82299520200A3948A /* WebClient.swift */,
 				52101FFA229952DC00A3948A /* Error.swift */,
+				5210BD21229DA0160074AA6C /* ArticleService.swift */,
 			);
 			path = web;
 			sourceTree = "<group>";
@@ -227,7 +233,9 @@
 				52101FFB229952DC00A3948A /* Error.swift in Sources */,
 				520DD35F2298631000AFC45A /* ViewController.swift in Sources */,
 				52101FFE22999F9600A3948A /* ArticleData.swift in Sources */,
+				5210BD22229DA0160074AA6C /* ArticleService.swift in Sources */,
 				520DD35D2298631000AFC45A /* AppDelegate.swift in Sources */,
+				5210BD20229D995D0074AA6C /* ArticlesStorage.xcdatamodeld in Sources */,
 				52101FF92299520200A3948A /* WebClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +434,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5210BD1E229D995D0074AA6C /* ArticlesStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5210BD1F229D995D0074AA6C /* WeatherStorage.xcdatamodel */,
+			);
+			currentVersion = 5210BD1F229D995D0074AA6C /* WeatherStorage.xcdatamodel */;
+			path = ArticlesStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 520DD3512298631000AFC45A /* Project object */;
 }
