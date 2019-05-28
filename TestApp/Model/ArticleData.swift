@@ -37,7 +37,6 @@ struct ArticleData {
     var media: [String]?
     var articleUrl: String
     var filtered: ArticleFilter = .MostViewed
-
     //shared fields
     var shareCount: Int
     {
@@ -83,5 +82,25 @@ struct ArticleData {
         shareCount = dictionary["share_count"] as? Int ?? 0
         emailedCount = dictionary["emailed_count"] as? Int ?? 0
         viewsCount = dictionary["views"] as? Int ?? 0
+    }
+    
+    func getDictionary()->[String:Any] {
+        var dictionary: [String:Any] = [:]
+        dictionary["adx_keywords"] = keywords
+        dictionary["section"] = section
+        dictionary["subsection"] = subsection
+        dictionary["byline"] = byline
+        dictionary["type"] = type
+        dictionary["title"] = title
+        dictionary["published_date"] = publishedDate
+        dictionary["source"] = source
+        dictionary["id"] = id
+        dictionary["asset_id"] = assetId
+        dictionary["url"] = articleUrl
+        dictionary["share_count"] = shareCount
+        dictionary["email_count"] = emailedCount
+        dictionary["views"] = viewsCount
+        //let dict = Dictionary(uniqueKeysWithValues: Mirror(reflecting: self).children.map{($0.label!, $0.value)})
+        return dictionary
     }
 }
