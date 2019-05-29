@@ -41,7 +41,9 @@ struct ArticleData {
     var shareCount: Int
     {
         didSet {
-            filtered = .Shared
+            if shareCount > 0 {
+                filtered = .Shared
+            }
         }
     }
     
@@ -49,20 +51,22 @@ struct ArticleData {
     var emailedCount: Int
     {
         didSet {
-            filtered = .Emailed
+            if emailedCount > 0 {
+                filtered = .Emailed
+            }
         }
     }
     //viewed fields
     var viewsCount: Int
     {
         didSet {
-            filtered = .MostViewed
+            if viewsCount > 0 {
+                filtered = .MostViewed
+            }
         }
     }
-//    private enum keys: String, CodingKey {
-//        case num_results
-//        case results
-//    }
+    static var keys:[String] = ["adx_keywords","section","subsection","byline","type",
+    "title", "published_date", "source", "id", "asset_id", "url", "share_count", "emailed_count","viewed" ]
     
     init(dictionary: JSON) {
         keywords = dictionary["adx_keywords"] as? String ?? ""

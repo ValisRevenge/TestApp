@@ -21,6 +21,7 @@ class ArticlesTableController: UIViewController {
         super.viewDidLoad()
         articleTableView.delegate = self
         articleTableView.dataSource = self
+        articleTableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
     }
     
@@ -79,7 +80,7 @@ class ArticlesTableController: UIViewController {
     func getFavoriteArticles() {
         nytArray = []
         for item in containers {
-            let dictionary = item.changedValues()
+            let dictionary = item.dictionaryWithValues(forKeys: ArticleData.keys)
             nytArray.append(ArticleData(dictionary: dictionary))
         }
         articleTableView.reloadData()
@@ -103,16 +104,19 @@ class ArticlesTableController: UIViewController {
     
 }
 
-extension ArticlesTableController: UITableViewDelegate {
+//=========Mark: TableView=======
+
+extension ArticlesTableController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Detail") as! DetailArticleDataController
         controller.articleData = nytArray[indexPath.row]
-        
+        controller.filter = nytArray[indexPath.row].filtered
+        if tableView.tag == 4 {
+            controller.isFavorite = true
+        }
         self.present(controller, animated: false, completion: nil)
     }
-}
-
-extension ArticlesTableController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -123,8 +127,11 @@ extension ArticlesTableController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell(style: .default, reuseIdentifier: "322")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ArticleTableViewCell
+        cell.authorsLabel.text = nytArray[indexPath.row].byline
+        cell.titleLabel.text = nytArray[indexPath.row].title
+
+        return cell
     }
     
     
