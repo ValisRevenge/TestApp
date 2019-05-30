@@ -28,7 +28,7 @@ class ArticleService {
         }
         
         let url = String(path: path, params: ["api-key":"AVWhbG0l8u70pfMzA9k1VYUSPAorkRLL"], method: .get)
-        client.load(path: url, httpMethod: .get, params: [:], completion: completion)
+        client.load(path: url, httpMethod: .get, params: nil, completion: completion)
     }
 }
 

@@ -16,7 +16,7 @@ final class WebClient {
         baseUrl = url
     }
     
-    func load(path: String, httpMethod:HTTPMethod, params:[String:Any], completion: @escaping(Any?, ServiceError?)-> Void) {
+    func load(path: String, httpMethod:HTTPMethod, params:[String:Any]?, completion: @escaping(Any?, ServiceError?)-> Void) {
         let url = URL(string: baseUrl + path)!
         
         request(url, method: httpMethod, parameters: nil, encoding: URLEncoding.default, headers: nil).validate().responseJSON(completionHandler: {
