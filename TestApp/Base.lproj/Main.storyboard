@@ -65,7 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LFJ-eU-leS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Viewed" image="white_star" id="Vu0-6B-e8z"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Viewed" image="viewed" id="Vu0-6B-e8z"/>
                     <connections>
                         <outlet property="articleTableView" destination="ciC-NF-oyI" id="Vzs-Dm-Xpo"/>
                     </connections>
@@ -96,7 +96,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w1M-ek-lJQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Emailed" image="white_star" id="WLw-rd-o69"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Emailed" image="mailed" id="WLw-rd-o69"/>
                     <connections>
                         <outlet property="articleTableView" destination="Pk2-Kp-jV8" id="CKn-Rw-War"/>
                     </connections>
@@ -158,7 +158,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="doQ-yO-3Vu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Shared" image="white_star" id="Sk2-BD-OAx"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Shared" image="shared" id="Sk2-BD-OAx"/>
                     <connections>
                         <outlet property="articleTableView" destination="QJL-qd-eqi" id="rFA-Tc-DsL"/>
                     </connections>
@@ -182,7 +182,7 @@
                                 <color key="barTintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="Smy-eg-w06">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="xgm-2o-6b1">
+                                        <barButtonItem key="leftBarButtonItem" title="back" image="back" id="xgm-2o-6b1">
                                             <connections>
                                                 <action selector="onBack:" destination="0bf-Yr-vbp" id="UF6-dF-MFg"/>
                                             </connections>
@@ -223,14 +223,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="keywords:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2E-a3-BPB">
-                                <rect key="frame" x="31" y="452" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bdsm_gothic" translatesAutoresizingMaskIntoConstraints="NO" id="HhP-O2-pnt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="testing_image" translatesAutoresizingMaskIntoConstraints="NO" id="HhP-O2-pnt">
                                 <rect key="frame" x="31" y="92" width="316" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -262,8 +255,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbB-2s-9QX">
-                                <rect key="frame" x="172" y="451" width="159" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EbB-2s-9QX">
+                                <rect key="frame" x="172" y="451" width="159" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -291,14 +284,21 @@
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abstract:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xeu-xr-B4b">
-                                <rect key="frame" x="31" y="512" width="71" height="21"/>
+                                <rect key="frame" x="31" y="541" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-UE-ZT1">
-                                <rect key="frame" x="171" y="512" width="159" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-UE-ZT1">
+                                <rect key="frame" x="171" y="512" width="159" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="keywords:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2E-a3-BPB">
+                                <rect key="frame" x="31" y="476" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -365,7 +365,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bdsm_gothic" width="1655" height="1482"/>
+        <image name="back" width="24" height="24"/>
+        <image name="mailed" width="39" height="39"/>
+        <image name="shared" width="49" height="49"/>
+        <image name="testing_image" width="1655" height="1482"/>
+        <image name="viewed" width="50" height="50"/>
         <image name="white_star" width="22" height="23"/>
     </resources>
 </document>

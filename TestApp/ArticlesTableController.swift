@@ -112,7 +112,7 @@ extension ArticlesTableController: UITableViewDelegate, UITableViewDataSource {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Detail") as! DetailArticleDataController
         controller.articleData = nytArray[indexPath.row]
         controller.filter = nytArray[indexPath.row].filtered
-        if tableView.tag == 4 {
+        if tabBarItem.tag == 4 {
             controller.isFavorite = true
         }
         self.present(controller, animated: false, completion: nil)

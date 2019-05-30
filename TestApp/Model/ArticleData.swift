@@ -102,8 +102,8 @@ struct ArticleData {
         dictionary["asset_id"] = assetId
         dictionary["url"] = articleUrl
         dictionary["share_count"] = shareCount
-        dictionary["email_count"] = emailedCount
-        dictionary["views"] = viewsCount
+        dictionary["emailed_count"] = emailedCount
+        dictionary["viewed"] = viewsCount
         //let dict = Dictionary(uniqueKeysWithValues: Mirror(reflecting: self).children.map{($0.label!, $0.value)})
         return dictionary
     }
