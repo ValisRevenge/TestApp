@@ -21,7 +21,7 @@ class ArticlesTableController: UIViewController {
         super.viewDidLoad()
         articleTableView.delegate = self
         articleTableView.dataSource = self
-        articleTableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        articleTableView.register(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
     }
     
@@ -115,7 +115,7 @@ extension ArticlesTableController: UITableViewDelegate, UITableViewDataSource {
         if tabBarItem.tag == 4 {
             controller.isFavorite = true
         }
-        self.present(controller, animated: false, completion: nil)
+        self.present(controller, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -128,9 +128,7 @@ extension ArticlesTableController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ArticleTableViewCell
-        cell.authorsLabel.text = nytArray[indexPath.row].byline
-        cell.titleLabel.text = nytArray[indexPath.row].title
-
+        cell.setTitle(title: nytArray[indexPath.row].title, authors: nytArray[indexPath.row].byline)
         return cell
     }
     

@@ -38,33 +38,14 @@ struct ArticleData {
     var articleUrl: String
     var filtered: ArticleFilter = .MostViewed
     //shared fields
-    var shareCount: Int
-    {
-        didSet {
-            if shareCount > 0 {
-                filtered = .Shared
-            }
-        }
-    }
+    var shareCount: Int = 0
     
     //emailed fields
-    var emailedCount: Int
-    {
-        didSet {
-            if emailedCount > 0 {
-                filtered = .Emailed
-            }
-        }
-    }
+    var emailedCount: Int = 0
+
     //viewed fields
-    var viewsCount: Int
-    {
-        didSet {
-            if viewsCount > 0 {
-                filtered = .MostViewed
-            }
-        }
-    }
+    var viewsCount: Int = 0
+
     static var keys:[String] = ["adx_keywords","section","subsection","byline","type",
     "title", "published_date", "source", "id", "asset_id", "url", "share_count", "emailed_count","viewed" ]
     
@@ -83,9 +64,18 @@ struct ArticleData {
         assetId = dictionary["asset_id"] as? Int ?? -1
         articleUrl = dictionary["url"] as? String ?? ""
         
-        shareCount = dictionary["share_count"] as? Int ?? 0
-        emailedCount = dictionary["emailed_count"] as? Int ?? 0
-        viewsCount = dictionary["views"] as? Int ?? 0
+        if let shareCount = dictionary["share_count"] as? Int, shareCount > 0 {
+            self.shareCount = shareCount
+            filtered = .Shared
+        }
+        if let emailedCount = dictionary["email_count"] as? Int, emailedCount > 0 {
+            self.emailedCount = emailedCount
+            filtered = .Emailed
+        }
+        if let viewsCount = dictionary["views"] as? Int, viewsCount > 0 {
+            self.viewsCount = viewsCount
+            filtered = .MostViewed
+        }
     }
     
     func getDictionary()->[String:Any] {

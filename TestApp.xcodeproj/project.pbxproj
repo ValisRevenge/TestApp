@@ -14,8 +14,8 @@
 		520DD3642298631100AFC45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520DD3632298631100AFC45A /* Assets.xcassets */; };
 		520DD3672298631100AFC45A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520DD3652298631100AFC45A /* LaunchScreen.storyboard */; };
 		520E3F5F229EC9CE00550F9C /* ArticlesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3F5E229EC9CE00550F9C /* ArticlesTableController.swift */; };
-		520E3F63229ECCA600550F9C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3F61229ECCA600550F9C /* TableViewCell.swift */; };
-		520E3F64229ECCA600550F9C /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520E3F62229ECCA600550F9C /* TableViewCell.xib */; };
+		520E3F63229ECCA600550F9C /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3F61229ECCA600550F9C /* ArticleTableViewCell.swift */; };
+		520E3F64229ECCA600550F9C /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520E3F62229ECCA600550F9C /* ArticleTableViewCell.xib */; };
 		520E3F66229EDFB600550F9C /* DetailArticleDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3F65229EDFB600550F9C /* DetailArticleDataController.swift */; };
 		52101FF92299520200A3948A /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52101FF82299520200A3948A /* WebClient.swift */; };
 		52101FFB229952DC00A3948A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52101FFA229952DC00A3948A /* Error.swift */; };
@@ -34,8 +34,8 @@
 		520DD3662298631100AFC45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		520DD3682298631100AFC45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		520E3F5E229EC9CE00550F9C /* ArticlesTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableController.swift; sourceTree = "<group>"; };
-		520E3F61229ECCA600550F9C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		520E3F62229ECCA600550F9C /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		520E3F61229ECCA600550F9C /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		520E3F62229ECCA600550F9C /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		520E3F65229EDFB600550F9C /* DetailArticleDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticleDataController.swift; sourceTree = "<group>"; };
 		52101FF82299520200A3948A /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
 		52101FFA229952DC00A3948A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		520E3F60229ECC5F00550F9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				520E3F61229ECCA600550F9C /* TableViewCell.swift */,
-				520E3F62229ECCA600550F9C /* TableViewCell.xib */,
+				520E3F61229ECCA600550F9C /* ArticleTableViewCell.swift */,
+				520E3F62229ECCA600550F9C /* ArticleTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520DD3672298631100AFC45A /* LaunchScreen.storyboard in Resources */,
-				520E3F64229ECCA600550F9C /* TableViewCell.xib in Resources */,
+				520E3F64229ECCA600550F9C /* ArticleTableViewCell.xib in Resources */,
 				520DD3642298631100AFC45A /* Assets.xcassets in Resources */,
 				520DD3622298631000AFC45A /* Main.storyboard in Resources */,
 			);
@@ -254,7 +254,7 @@
 				52101FFB229952DC00A3948A /* Error.swift in Sources */,
 				520DD35F2298631000AFC45A /* ViewController.swift in Sources */,
 				52101FFE22999F9600A3948A /* ArticleData.swift in Sources */,
-				520E3F63229ECCA600550F9C /* TableViewCell.swift in Sources */,
+				520E3F63229ECCA600550F9C /* ArticleTableViewCell.swift in Sources */,
 				520E3F5F229EC9CE00550F9C /* ArticlesTableController.swift in Sources */,
 				520E3F66229EDFB600550F9C /* DetailArticleDataController.swift in Sources */,
 				5210BD22229DA0160074AA6C /* ArticleService.swift in Sources */,

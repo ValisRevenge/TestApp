@@ -11,7 +11,6 @@ class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
-    
     @IBOutlet weak var authorsLabel: UILabel!
     
     override func awakeFromNib() {
@@ -23,6 +22,11 @@ class ArticleTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setTitle(title:String, authors:String) {
+        titleLabel.text = title
+        authorsLabel.text = authors
     }
     
 }
