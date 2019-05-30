@@ -13,7 +13,7 @@ class DetailArticleDataController
     
     @IBOutlet weak var titleBarItem: UINavigationItem!
     
-    @IBOutlet weak var addToFavoriteButton: UIBarButtonItem!
+    @IBOutlet weak var addToSelectedButton: UIBarButtonItem!
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -41,7 +41,7 @@ class DetailArticleDataController
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         if isFavorite {
-            addToFavoriteButton.isEnabled = false
+            addToSelectedButton.isEnabled = false
         }
         if let article = articleData {
             titleBarItem.title = article.title
@@ -97,6 +97,7 @@ class DetailArticleDataController
         catch let error as NSError {
             print(error.description)
         }
+        addToSelectedButton.isEnabled = false
     }
     /*
     // MARK: - Navigation

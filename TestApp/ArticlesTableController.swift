@@ -102,6 +102,20 @@ class ArticlesTableController: UIViewController {
         }
     }
     
+    func deleteManagedObject(obj: NSManagedObject) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let deleteRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ArticleEntity")
+        deleteRequest.returnsObjectsAsFaults = false
+        do {
+            managedContext.delete(obj)
+            try managedContext.save()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
+    
 }
 
 //=========Mark: TableView=======
@@ -132,5 +146,22 @@ extension ArticlesTableController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    //deleting cells
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if tabBarItem.tag == 4 {
+            return true
+        }
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            nytArray.remove(at: indexPath.row)
+            deleteManagedObject(obj: containers[indexPath.row])
+            tableView.reloadData()
+        }
+
+    }
     
 }
