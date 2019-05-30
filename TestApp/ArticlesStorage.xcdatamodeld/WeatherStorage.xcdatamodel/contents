@@ -5,7 +5,7 @@
         <attribute name="adx_keywords" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="asset_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="byline" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="emailed_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="email_count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="media" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="published_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

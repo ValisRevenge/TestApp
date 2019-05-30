@@ -47,7 +47,7 @@ struct ArticleData {
     var viewsCount: Int = 0
 
     static var keys:[String] = ["adx_keywords","section","subsection","byline","type",
-    "title", "published_date", "source", "id", "asset_id", "url", "share_count", "emailed_count","viewed" ]
+    "title", "published_date", "source", "id", "asset_id", "url", "share_count", "email_count","viewed" ]
     
     init(dictionary: JSON) {
         keywords = dictionary["adx_keywords"] as? String ?? ""
@@ -92,7 +92,7 @@ struct ArticleData {
         dictionary["asset_id"] = assetId
         dictionary["url"] = articleUrl
         dictionary["share_count"] = shareCount
-        dictionary["emailed_count"] = emailedCount
+        dictionary["email_count"] = emailedCount
         dictionary["viewed"] = viewsCount
         //let dict = Dictionary(uniqueKeysWithValues: Mirror(reflecting: self).children.map{($0.label!, $0.value)})
         return dictionary

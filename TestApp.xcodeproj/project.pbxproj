@@ -87,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				520DD35C2298631000AFC45A /* AppDelegate.swift */,
-				520E3F5E229EC9CE00550F9C /* ArticlesTableController.swift */,
 				520DD3602298631000AFC45A /* Main.storyboard */,
 				520DD3632298631100AFC45A /* Assets.xcassets */,
 				5210BD1E229D995D0074AA6C /* ArticlesStorage.xcdatamodeld */,
@@ -103,6 +102,7 @@
 		520E3F60229ECC5F00550F9C /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				520E3F5E229EC9CE00550F9C /* ArticlesTableController.swift */,
 				520E3F65229EDFB600550F9C /* DetailArticleDataController.swift */,
 				520E3F61229ECCA600550F9C /* ArticleTableViewCell.swift */,
 				520E3F62229ECCA600550F9C /* ArticleTableViewCell.xib */,
