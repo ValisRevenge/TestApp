@@ -76,6 +76,7 @@ class DetailArticleDataController
     @IBAction func addToSelected(_ sender: Any) {
         guard let article = articleData else {return}
         saveArticle(article: article)
+        addToSelectedButton.isEnabled = false
     }
     //close view
     @IBAction func onBack(_ sender: Any) {
