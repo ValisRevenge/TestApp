@@ -189,7 +189,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testing_image" translatesAutoresizingMaskIntoConstraints="NO" id="HhP-O2-pnt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_article" translatesAutoresizingMaskIntoConstraints="NO" id="HhP-O2-pnt">
                                 <rect key="frame" x="31" y="92" width="300" height="127"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="127" id="Vjr-67-lUn"/>
@@ -334,9 +334,9 @@
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
+        <image name="icon_article" width="400" height="400"/>
         <image name="mailed" width="39" height="39"/>
         <image name="shared" width="49" height="49"/>
-        <image name="testing_image" width="1655" height="1482"/>
         <image name="viewed" width="50" height="50"/>
         <image name="white_star" width="22" height="23"/>
     </resources>
